@@ -20,7 +20,9 @@ function App() {
 
   const scrollToExercise = (exerciseTitle) => {
     if (exercisesRef.current) {
-      const exerciseElement = exercisesRef.current.querySelector(`[data-title="${exerciseTitle}"]`);
+      const exerciseElement = exercisesRef.current.querySelector(
+        `[data-title="${exerciseTitle}"]`
+      );
       if (exerciseElement) {
         exerciseElement.scrollIntoView({ behavior: "smooth" });
       }
@@ -31,7 +33,11 @@ function App() {
     <div id="container">
       <Header />
       <AddButton handleAddExercise={handleAddExercise} />
-      <SearchBar setSearchText={setSearchText} titles={titles} scrollToExercise={scrollToExercise} />
+      <SearchBar
+        setSearchText={setSearchText}
+        titles={titles}
+        scrollToExercise={scrollToExercise}
+      />
       <div id="exercises" ref={exercisesRef}>
         <Exercises searchText={searchText} titles={titles} />
       </div>
